@@ -1,0 +1,47 @@
+.t-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* mantém o botão no fim */
+    align-items: flex-start;
+    background: #f7faff;
+    border-radius: 14px;
+    padding: 1.8rem;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.25s ease;
+    min-height: 260px;
+    /* garante altura uniforme */
+}
+
+.t-card h3 {
+    color: #2f6ecb;
+    font-size: 1.15rem;
+    margin-bottom: 0.75rem;
+    font-weight: 700;
+}
+
+.t-card p {
+    flex-grow: 1;
+    /* força o texto a ocupar espaço entre título e botão */
+    color: #333;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.t-card .link-contato {
+    align-self: flex-start;
+    /* garante alinhamento consistente */
+    background: #ff6f3c;
+    color: #fff;
+    padding: 0.6rem 1.2rem;
+    border-radius: 999px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.t-card .link-contato:hover {
+    background: #ff853f;
+    transform: translateY(-2px);
+}

@@ -1,6 +1,7 @@
 @import url(transportes.css);
 @import url(cobranca.css);
 @import url(desenvolvimento.css);
+@import url(servicos.css);
 
 :root {
     --primary: #d8ecfa;
@@ -146,17 +147,12 @@ body {
     color: var(--text-dark);
 }
 
-.hero-content {
-    max-width: 700px;
-    margin: 0 auto;
-}
-
 .titulo-hero {
     font-size: var(--step-3);
     font-weight: 700;
     line-height: 1.2;
     margin-bottom: 1rem;
-    color: #0d1925;
+    color: #ffffff;
 }
 
 .sub-hero {
@@ -536,12 +532,14 @@ body {
 }
 
 .hero-content {
-    position: absolute;
-    bottom: 20%;
-    left: 10%;
+    position: relative;
+    top: 30%;
+    z-index: 2;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    text-align: center;
     color: #fff;
-    max-width: 600px;
-    z-index: 10;
     animation: fadeInUp 1s ease forwards;
 }
 

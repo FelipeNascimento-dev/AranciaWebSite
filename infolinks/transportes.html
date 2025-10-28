@@ -21,18 +21,42 @@
   <nav class="navbar">
     <a class="nav-items" href="/index.html">Home</a>
     <a class="nav-items" href="/infolinks/servicos.html">Serviços</a>
-    <a class="nav-items" href="/infolinks/portfolio.html">Portfólio</a>
+    <!-- <a class="nav-items" href="/infolinks/portfolio.html">Portfólio</a> -->
     <!-- <a class="nav-items" href="/infolinks/blog.html">Blog</a> -->
     <a class="nav-items" href="/infolinks/LGPD.html">LGPD</a>
     <a class="nav-items" href="/infolinks/contato.html">Contato</a>
     <a class="nav-items" href="/infolinks/sobre.html">Sobre</a>
   </nav>
 
-  <section class="hero hero-transportes">
-    <div class="hero-content">
-      <h1 class="titulo-hero">Transportes & Logística</h1>
-      <p class="sub-hero">Soluções inteligentes para movimentação de cargas em todo o Brasil.</p>
-      <a href="/infolinks/contato.html" class="link-contato">Solicite um contato</a>
+  <!-- 🔄 HERO CARROSSEL -->
+  <section class="hero-carousel">
+    <div class="hero-slide active" style="background-image: url('/images/PA1.jpg');">
+      <div class="hero-content">
+        <h1 class="titulo-hero">Transportes & Logística</h1>
+        <p class="sub-hero">Soluções inteligentes para movimentação de cargas em todo o Brasil.</p>
+        <a href="/infolinks/contato.html" class="link-contato">Solicite um contato</a>
+      </div>
+    </div>
+
+    <div class="hero-slide" style="background-image: url('/images/PA2.jpg');">
+      <div class="hero-content">
+        <h1 class="titulo-hero">Conectando empresas ao futuro</h1>
+        <p class="sub-hero">Tecnologia, rastreamento e eficiência em cada entrega.</p>
+        <a href="/infolinks/servicos.html" class="link-contato">Conheça nossos serviços</a>
+      </div>
+    </div>
+
+    <div class="hero-slide" style="background-image: url('/images/PA3.jpg');">
+      <div class="hero-content">
+        <h1 class="titulo-hero">Operações sob medida</h1>
+        <p class="sub-hero">Planejamento logístico e suporte 24h para sua empresa.</p>
+        <a href="/infolinks/sobre.html" class="link-contato">Saiba mais</a>
+      </div>
+    </div>
+
+    <div class="carousel-controls">
+      <span class="prev">&#10094;</span>
+      <span class="next">&#10095;</span>
     </div>
   </section>
 
@@ -71,6 +95,33 @@
   <footer class="footer-section">
     <p class="footer-text">&copy; 2025 ARANCIA S/A - Soluções em Transportes</p>
   </footer>
+
+  <script>
+    const slides = document.querySelectorAll('.hero-slide');
+    let currentSlide = 0;
+    const nextBtn = document.querySelector('.next');
+    const prevBtn = document.querySelector('.prev');
+
+    function showSlide(index) {
+      slides.forEach(slide => slide.classList.remove('active'));
+      slides[index].classList.add('active');
+    }
+
+    nextBtn.addEventListener('click', () => {
+      currentSlide = (currentSlide + 1) % slides.length;
+      showSlide(currentSlide);
+    });
+
+    prevBtn.addEventListener('click', () => {
+      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+      showSlide(currentSlide);
+    });
+
+    setInterval(() => {
+      currentSlide = (currentSlide + 1) % slides.length;
+      showSlide(currentSlide);
+    }, 6000);
+  </script>
 
 </body>
 
