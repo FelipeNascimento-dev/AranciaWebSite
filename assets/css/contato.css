@@ -1,0 +1,125 @@
+.contact-form {
+  max-width: 600px;
+  margin: 3rem auto;
+  background: var(--bg-elev);
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  background-color: var(--bg-light);
+  font-size: 1rem;
+  color: var(--text-dark);
+  font-family: var(--font);
+  transition: all 0.25s ease;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #aaa;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: var(--text-nav-hover);
+  box-shadow: 0 0 6px rgba(0, 74, 173, 0.15);
+  background: #fff;
+}
+
+.lgpd-section {
+  margin-top: 1.5rem;
+  padding: 1.5rem;
+  background: #f9fbff;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+.lgpd-section h3 {
+  font-size: 1.05rem;
+  color: var(--accent);
+  margin-bottom: 1rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.checkbox-group {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.8rem 1rem;
+  margin-bottom: 1.2rem;
+}
+
+.checkbox-group label {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.95rem;
+  color: var(--text-dark);
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.checkbox-group input {
+  width: 17px;
+  height: 17px;
+  accent-color: var(--text-nav-hover);
+}
+
+.aceite-lgpd {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.9rem;
+  color: var(--text-dark);
+  line-height: 1.5;
+  margin-top: 0.5rem;
+}
+
+.aceite-lgpd input {
+  flex-shrink: 0;
+  width: 17px;
+  height: 17px;
+  accent-color: var(--text-nav-hover);
+  margin-top: 0.1rem;
+}
+
+.aceite-lgpd span {
+  display: inline-block;
+  max-width: 90%;
+}
+
+.aceite-lgpd a {
+  color: var(--text-nav-hover);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.aceite-lgpd a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .checkbox-group {
+    grid-template-columns: 1fr;
+  }
+
+  .aceite-lgpd {
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+
+  .aceite-lgpd span {
+    max-width: 100%;
+  }
+}

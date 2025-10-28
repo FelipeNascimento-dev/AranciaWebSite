@@ -2,6 +2,7 @@
 @import url(cobranca.css);
 @import url(desenvolvimento.css);
 @import url(servicos.css);
+@import url(contato.css);
 
 :root {
     --primary: #d8ecfa;

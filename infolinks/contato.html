@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <link rel="shortcut icon" type="imagex/png" href="/images/new_logo_reduzida.png">
+    <title>ARANCIA - Contato</title>
+</head>
+
+<body>
+
+    <header class="header">
+        <img class="logo-img" src="/images/logo_flow.png" alt="Arancia-Logo">
+        <h1 class="header-text">Transformando ideias em soluções reais</h1>
+    </header>
+
+    <nav class="navbar">
+        <a class="nav-items" href="index.html">Home</a>
+        <a class="nav-items" href="#servicos">Serviços</a>
+        <a class="nav-items" href="/infolinks/LGPD.html">LGPD</a>
+        <a class="nav-items" href="/infolinks/contato.html">Contato</a>
+        <a class="nav-items" href="/infolinks/sobre.html">Sobre</a>
+    </nav>
+
+    <section class="hero-carousel">
+        <div class="hero-slide active" style="background-image: url('/images/PA1.jpg');">
+            <div class="hero-content">
+                <h1 class="titulo-hero">Fale Conosco</h1>
+                <p class="sub-hero">Estamos prontos para ouvir suas ideias e criar soluções sob medida para o seu
+                    negócio.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="transportes-intro">
+        <div class="container" data-aos="fade-up">
+            <h2 class="section-title">Entre em Contato com a C-Trends</h2>
+            <p class="section-sub">
+                Preencha o formulário abaixo e nossa equipe retornará o mais breve possível.<br>
+                Você também pode nos contatar diretamente pelo e-mail:
+                <b>contato@c-trends.com.br</b>
+            </p>
+
+            <form id="contactForm" class="contact-form">
+                <input type="text" id="nome" name="nome" required placeholder="Seu nome completo">
+                <input type="email" id="email" name="email" required placeholder="Seu e-mail">
+                <input type="tel" id="telefone" name="telefone" placeholder="Telefone (opcional)">
+                <input type="text" id="assunto" name="assunto" placeholder="Assunto (opcional)">
+                <textarea id="mensagem" name="mensagem" rows="5" required
+                    placeholder="Escreva sua mensagem..."></textarea>
+
+                <div class="lgpd-section">
+                    <h3>Preferências de Contato</h3>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="consent_rcs" value="Sim"> Mensagens via
+                            <strong>RCS</strong></label>
+                        <label><input type="checkbox" name="consent_whatsapp" value="Sim"> Mensagens via
+                            <strong>WhatsApp</strong></label>
+                        <label><input type="checkbox" name="consent_sms" value="Sim"> Mensagens via
+                            <strong>SMS</strong></label>
+                        <label><input type="checkbox" name="consent_bloqueio" value="Sim"> <strong>Bloquear</strong>
+                            todos os envios</label>
+                    </div>
+                    <label class="aceite-lgpd">
+                        <input type="checkbox" id="aceite" name="aceite" required>
+                        Autorizo o uso dos meus dados conforme a <a href="/infolinks/politica-privacidade.html" target="_blank">Política de Privacidade</a> e os <a href="/infolinks/termos-servico.html" target="_blank">Termos de Serviço</a>.
+                    </label>
+                </div>
+
+                <button type="submit" class="link-contato" id="btnEnviar">Enviar Mensagem</button>
+            </form>
+
+            <div id="statusMsg" class="status-message"></div>
+
+        </div>
+    </section>
+
+
+    <section class="flow-section" data-aos="fade-up">
+        <div class="container">
+            <h2 class="flow-title">Nossos Contatos</h2>
+            <div class="flow-details">
+                <div class="flow-detail-block">
+                    <h3>📍 Endereço</h3>
+                    <p>Rua Bonfim, 81 – Tatuapé – São Paulo/SP – CEP 03073-010</p>
+                </div>
+                <div class="flow-detail-block">
+                    <h3>📧 E-mail</h3>
+                    <p><a href="mailto:contato@c-trends.com.br">contato@c-trends.com.br</a></p>
+                </div>
+                <div class="flow-detail-block">
+                    <h3>📞 Telefone</h3>
+                    <p>(11) 9 9999-9999</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer-section">
+        <p class="footer-text">&copy; 2025 C-Trends Flow Systems Ltda. — Todos os direitos reservados</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script>
+        AOS.init();
+        emailjs.init("2LlPFIOlsB6a1gSxv"); // substitua pelo seu userID do EmailJS
+
+        const form = document.getElementById("contactForm");
+        const statusMsg = document.getElementById("statusMsg");
+        const btnEnviar = document.getElementById("btnEnviar");
+
+        form.addEventListener("submit", function (e) {
+            e.preventDefault();
+            btnEnviar.disabled = true;
+            btnEnviar.textContent = "Enviando...";
+
+            emailjs.send("service_rsz27b2", "template_contato", {
+            nome: form.nome.value,
+            email: form.email.value,
+            telefone: form.telefone.value,
+            assunto: form.assunto.value,
+            mensagem: form.mensagem.value,
+            consent_rcs: form.consent_rcs.checked ? "Sim" : "Não",
+            consent_whatsapp: form.consent_whatsapp.checked ? "Sim" : "Não",
+            consent_sms: form.consent_sms.checked ? "Sim" : "Não",
+            consent_bloqueio: form.consent_bloqueio.checked ? "Sim" : "Não",
+            aceite: form.aceite.checked ? "Aceitou os termos" : "Não aceitou"
+            })
+
+                .then(() => {
+                    statusMsg.textContent = "✅ Mensagem enviada com sucesso! Entraremos em contato em breve.";
+                    statusMsg.style.color = "green";
+                    form.reset();
+                })
+                .catch((error) => {
+                    console.error(error);
+                    statusMsg.textContent = "❌ Erro ao enviar. Tente novamente mais tarde.";
+                    statusMsg.style.color = "red";
+                })
+                .finally(() => {
+                    btnEnviar.disabled = false;
+                    btnEnviar.textContent = "Enviar Mensagem";
+                });
+        });
+    </script>
+
+</body>
+
+</html>
