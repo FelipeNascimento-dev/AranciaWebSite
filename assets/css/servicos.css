@@ -2,7 +2,6 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    /* mantém o botão no fim */
     align-items: flex-start;
     background: #f7faff;
     border-radius: 14px;
@@ -10,7 +9,6 @@
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
     transition: transform 0.2s ease, box-shadow 0.25s ease;
     min-height: 260px;
-    /* garante altura uniforme */
 }
 
 .t-card h3 {
@@ -22,7 +20,6 @@
 
 .t-card p {
     flex-grow: 1;
-    /* força o texto a ocupar espaço entre título e botão */
     color: #333;
     font-size: 0.95rem;
     line-height: 1.6;
@@ -31,7 +28,6 @@
 
 .t-card .link-contato {
     align-self: flex-start;
-    /* garante alinhamento consistente */
     background: #ff6f3c;
     color: #fff;
     padding: 0.6rem 1.2rem;
