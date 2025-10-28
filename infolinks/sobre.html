@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <link rel="shortcut icon" type="imagex/png" href="/images/new_logo_reduzida.png">
+  <title>ARANCIA - Sobre a C-Trends</title>
+</head>
+
+<body>
+
+  <header class="header">
+    <img class="logo-img" src="/images/logo_flow.png" alt="C-Trends Logo">
+    <h1 class="header-text">Transformando ideias em soluções reais</h1>
+  </header>
+
+  <nav class="navbar">
+    <a class="nav-items" href="/index.html">Home</a>
+    <a class="nav-items" href="/infolinks/servicos.html">Serviços</a>
+    <a class="nav-items" href="/infolinks/transportes.html">Transportes</a>
+    <a class="nav-items" href="/infolinks/LGPD.html">LGPD</a>
+    <a class="nav-items" href="/infolinks/contato.html">Contato</a>
+    <a class="nav-items" href="/infolinks/sobre.html">Sobre</a>
+  </nav>
+
+  <!-- 🔄 HERO CARROSSEL -->
+  <section class="hero-carousel">
+    <div class="hero-slide active" style="background-image: url('/images/PA1.jpg');">
+      <div class="hero-content">
+        <h1 class="titulo-hero">Sobre a C-Trends</h1>
+        <p class="sub-hero">Inovação, tecnologia e eficiência em cada etapa do seu negócio.</p>
+      </div>
+    </div>
+
+    <div class="hero-slide" style="background-image: url('/images/PA2.jpg');">
+      <div class="hero-content">
+        <h1 class="titulo-hero">Mais que uma empresa</h1>
+        <p class="sub-hero">Somos parceiros estratégicos no crescimento dos nossos clientes.</p>
+      </div>
+    </div>
+
+    <div class="hero-slide" style="background-image: url('/images/PA3.jpg');">
+      <div class="hero-content">
+        <h1 class="titulo-hero">Excelência em movimento</h1>
+        <p class="sub-hero">Com tecnologia, dados e pessoas, criamos soluções que transformam.</p>
+      </div>
+    </div>
+
+    <div class="carousel-controls">
+      <span class="prev">&#10094;</span>
+      <span class="next">&#10095;</span>
+    </div>
+  </section>
+
+  <!-- 🧱 SOBRE A EMPRESA -->
+  <section class="transportes-intro">
+    <div class="container" data-aos="fade-up">
+      <h2 class="section-title">Quem Somos</h2>
+      <p class="section-sub">
+        A <strong>C-Trends</strong> é uma empresa especializada em <b>soluções logísticas, automação de processos,
+        tecnologia da informação e inteligência de dados</b>. Nosso propósito é conectar inovação e eficiência,
+        entregando resultados concretos para empresas de todo o Brasil.
+      </p>
+
+      <div class="transportes-grid">
+        <div class="t-card">
+          <h3>💡 Inovação Contínua</h3>
+          <p>Investimos constantemente em novas tecnologias para otimizar processos e criar soluções inteligentes.</p>
+        </div>
+        <div class="t-card">
+          <h3>🚀 Resultados Reais</h3>
+          <p>Nosso foco está em gerar impacto positivo e mensurável nos negócios de nossos clientes.</p>
+        </div>
+        <div class="t-card">
+          <h3>🤝 Parceria e Confiança</h3>
+          <p>Construímos relações sólidas baseadas em transparência, ética e comprometimento com resultados.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="flow-section" data-aos="fade-up">
+    <div class="container">
+      <h2 class="flow-title">Nossa Essência</h2>
+
+      <div class="flow-details">
+        <div class="flow-detail-block">
+          <h3>🎯 Missão</h3>
+          <p>Desenvolver soluções inovadoras que integrem tecnologia, logística e inteligência de dados,
+            promovendo eficiência e crescimento sustentável para nossos clientes.</p>
+        </div>
+
+        <div class="flow-detail-block">
+          <h3>🌐 Visão</h3>
+          <p>Ser referência nacional em inovação e performance empresarial, reconhecida pela excelência
+            e pela transformação digital dos negócios.</p>
+        </div>
+
+        <div class="flow-detail-block">
+          <h3>💎 Valores</h3>
+          <ul>
+            <p>Ética e transparência em todas as relações.</p>
+            <p>Comprometimento com resultados.</p>
+            <p>Valorização das pessoas e do conhecimento.</p>
+            <p>Inovação como cultura e diferencial competitivo.</p>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 📞 CHAMADA FINAL -->
+  <section class="cta-transportes">
+    <div class="cta-container">
+      <h2>Quer saber mais sobre a C-Trends?</h2>
+      <a href="/infolinks/contato.html" class="link-contato">Fale conosco</a>
+    </div>
+  </section>
+
+  <footer class="footer-section">
+    <p class="footer-text">&copy; 2025 C-Trends S/A — Soluções Inteligentes</p>
+  </footer>
+
+  <!-- 🧩 Scripts -->
+  <script>
+    AOS.init();
+
+    const slides = document.querySelectorAll('.hero-slide');
+    let currentSlide = 0;
+    const nextBtn = document.querySelector('.next');
+    const prevBtn = document.querySelector('.prev');
+
+    function showSlide(index) {
+      slides.forEach(slide => slide.classList.remove('active'));
+      slides[index].classList.add('active');
+    }
+
+    nextBtn.addEventListener('click', () => {
+      currentSlide = (currentSlide + 1) % slides.length;
+      showSlide(currentSlide);
+    });
+
+    prevBtn.addEventListener('click', () => {
+      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+      showSlide(currentSlide);
+    });
+
+    setInterval(() => {
+      currentSlide = (currentSlide + 1) % slides.length;
+      showSlide(currentSlide);
+    }, 6000);
+  </script>
+
+</body>
+</html>
