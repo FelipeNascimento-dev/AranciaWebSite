@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <link rel="shortcut icon" type="imagex/png" href="./images/new_logo_reduzida.png">
     <title>ARANCIA - Soluções Inovadoras</title>
@@ -27,11 +28,34 @@
         <a class="nav-items" href="/infolinks/sobre.html">Sobre</a>
     </nav>
 
-    <div class="hero">
-        <div class="hero-content">
-            <h1 class="titulo-hero">Transformando ideias em soluções</h1>
-            <p class="sub-hero">Inovação, tecnologia e estratégia para o seu negócio crescer.</p>
-            <a class="link-contato" href="/infolinks/contato.html">Solicite nosso contato</a>
+    <div class="hero-carousel">
+        <div class="hero-slide active" style="background-image: url('/images/PA1.jpg');">
+            <div class="hero-content">
+                <h1 class="titulo-hero">Transformando ideias em soluções</h1>
+                <p class="sub-hero">Inovação, tecnologia e estratégia para o seu negócio crescer.</p>
+                <a class="link-contato" href="/infolinks/contato.html">Solicite nosso contato</a>
+            </div>
+        </div>
+
+        <div class="hero-slide" style="background-image: url('images/PA2.jpg');">
+            <div class="hero-content">
+                <h1 class="titulo-hero">Soluções digitais sob medida</h1>
+                <p class="sub-hero">Da automação à inteligência de dados — nós cuidamos de tudo.</p>
+                <a class="link-contato" href="/infolinks/servicos.html">Conheça nossos serviços</a>
+            </div>
+        </div>
+
+        <div class="hero-slide" style="background-image: url('images/PA3.jpg');">
+            <div class="hero-content">
+                <h1 class="titulo-hero">Conecte sua empresa ao futuro</h1>
+                <p class="sub-hero">Transforme processos e melhore resultados com inovação.</p>
+                <a class="link-contato" href="/infolinks/sobre.html">Saiba mais</a>
+            </div>
+        </div>
+
+        <div class="carousel-controls">
+            <span class="prev">&#10094;</span>
+            <span class="next">&#10095;</span>
         </div>
     </div>
 
@@ -147,6 +171,34 @@
 
     <script>
         AOS.init();
+    </script>
+
+    <script>
+        const slides = document.querySelectorAll('.hero-slide');
+        let currentSlide = 0;
+        const nextBtn = document.querySelector('.next');
+        const prevBtn = document.querySelector('.prev');
+
+        function showSlide(index) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            slides[index].classList.add('active');
+        }
+
+        nextBtn.addEventListener('click', () => {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        });
+
+        prevBtn.addEventListener('click', () => {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(currentSlide);
+        });
+
+        // Troca automática a cada 6 segundos
+        setInterval(() => {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }, 6000);
     </script>
 </body>
 
