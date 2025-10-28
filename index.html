@@ -20,8 +20,8 @@
 
     <nav class="navbar">
         <a class="nav-items" href="index.html">Home</a>
-        <a class="nav-items" href="/infolinks/servicos.html">Serviços</a>
-        <a class="nav-items" href="/infolinks/portfolio.html">Portfólio</a>
+        <a class="nav-items" href="#servicos">Serviços</a>
+        <!-- <a class="nav-items" href="/infolinks/portfolio.html">Portfólio</a> -->
         <!-- <a class="nav-items" href="/infolinks/blog.html">Blog</a> -->
         <a class="nav-items" href="/infolinks/LGPD.html">LGPD</a>
         <a class="nav-items" href="/infolinks/contato.html">Contato</a>
@@ -108,7 +108,7 @@
         </div>
     </section>
 
-    <section class="services-section" data-aos="fade-up">
+    <section class="services-section" data-aos="fade-up" id="servicos">
         <h2 class="section-title">Nossos Serviços</h2>
         <div class="services">
 
@@ -194,7 +194,7 @@
             showSlide(currentSlide);
         });
 
-        // Troca automática a cada 6 segundos
+        // Troca em cada 6 segundos
         setInterval(() => {
             currentSlide = (currentSlide + 1) % slides.length;
             showSlide(currentSlide);
