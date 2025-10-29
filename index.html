@@ -161,6 +161,15 @@
         <p class="footer-text">&copy; 2025 C-Trends Flow Systems Ltda. — Todos os direitos reservados</p>
     </footer>
 
+    <div id="cookie-banner" class="cookie-banner">
+        <p>
+            Utilizamos cookies para melhorar sua experiência em nosso site.
+            Ao continuar navegando, você concorda com nossa
+            <a href="/infolinks/LGPD.html" target="_blank">Política de Privacidade</a>.
+        </p>
+        <button id="accept-cookies" class="cookie-btn">Aceitar</button>
+    </div>
+
     <script>
         AOS.init();
     </script>
@@ -191,6 +200,23 @@
             currentSlide = (currentSlide + 1) % slides.length;
             showSlide(currentSlide);
         }, 6000);
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const banner = document.getElementById("cookie-banner");
+            const acceptBtn = document.getElementById("accept-cookies");
+
+            // Se ainda não aceitou cookies, exibe o banner
+            if (!localStorage.getItem("cookiesAccepted")) {
+                banner.classList.add("show");
+            }
+
+            acceptBtn.addEventListener("click", () => {
+                localStorage.setItem("cookiesAccepted", "true");
+                banner.classList.remove("show");
+            });
+        });
     </script>
 </body>
 
